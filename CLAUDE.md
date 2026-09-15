@@ -14,6 +14,9 @@ Arcade Vault — a planned online arcade platform where users play games and com
 - Tailwind CSS v4 via `@tailwindcss/postcss` (no `tailwind.config.*`; theme tokens are defined inline in `app/globals.css` with `@theme inline`).
 - Path alias `@/*` maps to the repo root (`tsconfig.json`).
 
+# Skills
+ Usa siempre /frontend-desing para diseñar la interfaz de usuario.
+
 ## Commands
 
 - `npm run dev` — start the dev server.
