@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Prototipo estático de referencia (Babel/CDN, sin build propio) — ver spec 01, Decisions.
+    "reference/templates/**",
   ]),
 ]);
 
