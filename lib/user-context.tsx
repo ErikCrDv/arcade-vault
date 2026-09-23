@@ -16,8 +16,10 @@ export function UserProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<SessionUser | null>(null);
 
   useEffect(() => {
+    // Lectura de localStorage diferida al montaje para evitar mismatch de hidratación SSR (spec §Implementation plan, paso 2).
     try {
       const stored = JSON.parse(localStorage.getItem("av_user") || "null");
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setUser(stored);
     } catch {
       setUser(null);
