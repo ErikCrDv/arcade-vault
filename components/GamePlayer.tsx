@@ -130,7 +130,7 @@ export default function GamePlayer({ game }: GamePlayerProps) {
             )}
             <div className="actions">
               <button className="btn" onClick={restart}>JUGAR DE NUEVO</button>
-              <button className="btn magenta" onClick={() => router.push("/")}>VOLVER AL VAULT</button>
+              <button className="btn magenta" onClick={() => router.push("/juegos")}>VOLVER AL VAULT</button>
             </div>
           </div>
         </div>
