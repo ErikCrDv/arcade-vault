@@ -49,7 +49,7 @@ export default function GameDetail({ game }: GameDetailProps) {
             <Link className="btn xl pulse" href={`/juego/${game.id}/jugar`}>
               ▶ JUGAR AHORA
             </Link>
-            <Link className="btn ghost lg" href="/">
+            <Link className="btn ghost lg" href="/juegos">
               VOLVER AL VAULT
             </Link>
           </div>
