@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Press_Start_2P, JetBrains_Mono, Courier_Prime } from "next/font/google";
+import { Suspense } from "react";
+import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 import "./globals.css";
 
 const pressStart = Press_Start_2P({
@@ -37,7 +40,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <div className="av-bg" aria-hidden="true" />
         <div className="av-noise" aria-hidden="true" />
-        <div className="av-root">{children}</div>
+        <div className="av-root">
+          {/* usePathname puede suspender en rutas con ids fuera de generateStaticParams */}
+          <Suspense fallback={<nav className="av-nav" />}>
+            <Nav />
+          </Suspense>
+          <main className="av-main">{children}</main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
