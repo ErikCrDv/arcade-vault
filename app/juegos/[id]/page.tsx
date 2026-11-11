@@ -3,6 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GAMES, getGame, seededScores } from "@/lib/data";
 
+// Los 8 ids se pre-generan; se permite que la ruta bloquee para conservar el
+// 404 real (con Suspense, notFound() respondería 200).
+export const instant = false;
+
 export function generateStaticParams() {
   return GAMES.map((g) => ({ id: g.id }));
 }
