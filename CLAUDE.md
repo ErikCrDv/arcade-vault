@@ -8,12 +8,8 @@ Arcade Vault: a platform to play games online and compete for the highest score.
 
 The codebase is currently the unmodified Create Next App scaffold (`app/layout.tsx`, `app/page.tsx`, `app/globals.css`); there are no tests, API routes, or game logic yet.
 
-## Commands
-
-- `npm run dev` — dev server (Turbopack) at http://localhost:3000
-- `npm run build` / `npm run start` — production build / serve
-- `npm run lint` — ESLint (flat config, `eslint.config.mjs`); run on specific files with `npx eslint <path>`
-- No test runner is configured.
+## Skills
+Usa siempre /frontend-desing para diseñar interfacez de usuario.
 
 ## Next.js version caveat
 
