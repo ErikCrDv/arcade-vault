@@ -1,13 +1,16 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useUser } from "@/lib/session";
 
 export function AuthForm() {
   const router = useRouter();
   const { login, logout } = useUser();
-  const [tab, setTab] = useState<"in" | "up">("in");
+  const searchParams = useSearchParams();
+  const [tab, setTab] = useState<"in" | "up">(
+    searchParams.get("modo") === "registro" ? "up" : "in",
+  );
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
@@ -15,12 +18,12 @@ export function AuthForm() {
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
     login({ name: (user || "PLAYER1").toUpperCase().slice(0, 10) });
-    router.push("/");
+    router.push("/juegos");
   };
 
   const playAsGuest = () => {
     logout();
-    router.push("/");
+    router.push("/juegos");
   };
 
   return (
