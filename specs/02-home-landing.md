@@ -1,6 +1,6 @@
 # SPEC 02 — Home de aterrizaje en `/` y Biblioteca en `/juegos`
 
-> **Estado:** Aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-11-11
 > **Objetivo:** Portar la landing de `references/templates/home-about/home.jsx` a la ruta `/` y mover la Biblioteca actual a `/juegos`, actualizando nav y enlaces.
