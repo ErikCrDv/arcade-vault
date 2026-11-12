@@ -1,13 +1,16 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 import { useUser } from "@/lib/session";
 
 export function AuthForm() {
   const router = useRouter();
   const { login, logout } = useUser();
-  const [tab, setTab] = useState<"in" | "up">("in");
+  const searchParams = useSearchParams();
+  const [tab, setTab] = useState<"in" | "up">(
+    searchParams.get("modo") === "registro" ? "up" : "in",
+  );
   const [user, setUser] = useState("");
   const [pass, setPass] = useState("");
   const [email, setEmail] = useState("");
